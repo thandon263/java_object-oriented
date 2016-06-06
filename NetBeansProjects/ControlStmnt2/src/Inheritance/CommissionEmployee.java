@@ -18,7 +18,16 @@ public class CommissionEmployee extends Object {
     private double commissionRate; // commission percentage
     
     //five argument constructor
-    public commissionEmployee (String first, String last, String ssn, double sales, double rate)
+
+    /**
+     *
+       @param first
+     * @param last
+     * @param ssn
+     * @param sales
+     * @param rate
+     **/
+    public CommissionEmployee( String first, String last, String ssn, double sales, double rate )
     {
         //implicit call to object constructor occurs here
         firstName = first;
@@ -85,8 +94,21 @@ public class CommissionEmployee extends Object {
         return commissionRate;
     }
     
+    public double earnings()
+    {
+        return commissionRate * grossSales;
+        
+    }
+    
+    public String toString()
+    {
+        return String.format("%s: %s %s\n%s: %s\n%s: %.2f\n%s: %.2f", 
+                "commission employee", firstName, lastName, 
+                "social scurity number", socialSecurityNumber, 
+                "gross sales", grossSales, 
+                "commission rate", commissionRate );
+    }//end method toString
     
     
     
-    
- }
+ }//end class CommisionEmployee
